@@ -1,27 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
+import "./ScientistCard.css";
 
-const defaultImage = "https://via.placeholder.com/320x180?text=No+Image";
-
-export default function ScientistCard({ name, field, image, bgColor }) {
-  const [imgSrc, setImgSrc] = useState(image || defaultImage);
-
-  const handleImageError = () => {
-    if (imgSrc !== defaultImage) setImgSrc(defaultImage);
-  };
-
+function ScientistCard({ name, field, image, bgColor }) {
   return (
-    <div
-      className="scientist-card"
-      style={{ backgroundColor: bgColor || "#3498db" }}
-    >
+    <div className="card" style={{ backgroundColor: bgColor }}>
       <img
-        src={imgSrc}
-        alt={`${name}`}
-        onError={handleImageError}
-        className="scientist-image"
+        src={image || "https://via.placeholder.com/300x200?text=No+Image"}
+        alt={name}
+        className="card-image"
       />
-      <h3 className="scientist-name">{name}</h3>
-      <p className="scientist-field">{field}</p>
+      <div className="card-info">
+        <h3>{name}</h3>
+        <p>{field}</p>
+      </div>
     </div>
   );
 }
+
+export default ScientistCard;

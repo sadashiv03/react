@@ -1,71 +1,120 @@
 .home-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 900px; /* increased from 520px */
+  margin: 40px auto;
   padding: 20px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
 }
+
+
+
 
 .home-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .logout-button {
-  padding: 8px 16px;
-  background-color: #ff4b5c;
+  background: #e63946;
   color: white;
   border: none;
-  border-radius: 6px;
+  padding: 8px 14px;
+  border-radius: 4px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
-
 .logout-button:hover {
-  background-color: #e03e4e;
+  background: #d62828;
 }
 
-.scientist-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
+.converter-card {
+  border: 1px solid #ccc;
+  padding: 25px 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  background: #fff;
 }
 
-.scientist-card {
-  border-radius: 12px;
-  color: white;
-  padding: 16px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.scientist-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.scientist-image {
+.file-input {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  box-sizing: border-box;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-.scientist-name {
-  margin: 0;
-  font-size: 1.25rem;
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn.primary {
+  background-color: #007acc;
+  color: white;
+}
+
+.btn.primary:disabled {
+  background-color: #9fcffb;
+  cursor: not-allowed;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background-color: #005fa3;
+}
+
+.btn.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn.secondary:disabled {
+  background-color: #c1c5c8;
+  cursor: not-allowed;
+}
+
+.btn.secondary:hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+.csv-file-box {
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  background: #fefefe;
+  max-height: 400px; /* increased from 230px */
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  color: #333;
+}
+
+.file-box-header {
+  background: #007acc;
+  color: white;
   font-weight: 700;
+  padding: 8px 15px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  user-select: none;
 }
 
-.scientist-field {
-  margin: 5px 0 0 0;
-  font-size: 1rem;
-  font-weight: 500;
-  opacity: 0.85;
+.file-box-content {
+  padding: 10px 15px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.4;
 }
